@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html onkeypress="sniffer('You pressed a key!')">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="external.css">
+
+    <!---old style: <script type="text/javascript">
+         java != javascript
+    -->
+        
+    <!--- 
+    <script>
+     //'alert' is a function, function is short for functionality.
+
+     function myFunction(message) {
+        alert("You clicked on:"  +  message);
+        prompt("Please enter your name", "You clicked on:"  +  message);
+     }
+
+     function loadFunc() {
+         alert("The page has loaded." + new Date());
+     }   
+
+    </script>
+    --->
+
+
+    <script>
+        var firstName ="Bruna";
+        var lastName = "Matsumura";
+
+        var fullName;
+        fullName = firstName+ " " + lastName;
+
+        var aNumber = 6;
+        var bNumber = 4;
+
+        var theAddition = aNumber + bNumber;
+
+        function sniffer (message) {
+            console.log ("Something happened:" + message);
+
+        }
+
+        alert(fullName);
+        alert(theAddition);
+    </script>
+
+</head>
+
+<body onResidze="sniffer('window resized')" onload="alert('page loading')">
+
+    <h1>
+        Welcome to my website!
+    </h1>
+
+    <input type="text" onchange="alert('It changed!')">
+
+    <button id="button" type="button">Try it</button>
+
+    <p id="firstP">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta maiores neque, sapiente ipsam quis error, optio officiis praesentium atque perferendis quo. Veritatis magnam asperiores dolorem suscipit odio modi atque tempore?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores quis sunt voluptas quisquam temporibus cum facere iure beatae? Ipsa rem cupiditate fuga nesciunt illo in totam fugit, atque delectus dolores.
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem, cumque accusamus voluptatum velit blanditiis aperiam excepturi debitis sunt ratione, corrupti voluptatibus saepe! Veniam esse possimus voluptas animi perferendis, laudantium laboriosam.
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem nam, quae est vitae, repudiandae voluptates, rem quas sapiente tempore debitis consequuntur sit unde dolores! Mollitia unde facilis necessitatibus magnam quos!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore perferendis ad ipsa rem veritatis unde sint, temporibus laborum tempore reiciendis labore officia excepturi tempora odit est quasi, dicta itaque eius.
+    </p>
+    <p id="secondP">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta maiores neque, sapiente ipsam quis error, optio officiis praesentium atque perferendis quo. Veritatis magnam asperiores dolorem suscipit odio modi atque tempore?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores quis sunt voluptas quisquam temporibus cum facere iure beatae? Ipsa rem cupiditate fuga nesciunt illo in totam fugit, atque delectus dolores.
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem, cumque accusamus voluptatum velit blanditiis aperiam excepturi debitis sunt ratione, corrupti voluptatibus saepe! Veniam esse possimus voluptas animi perferendis, laudantium laboriosam.
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem nam, quae est vitae, repudiandae voluptates, rem quas sapiente tempore debitis consequuntur sit unde dolores! Mollitia unde facilis necessitatibus magnam quos!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore perferendis ad ipsa rem veritatis unde sint, temporibus laborum tempore reiciendis labore officia excepturi tempora odit est quasi, dicta itaque eius.
+    </p>
+    
+    
+
+    <script>
+        
+        document.getElementById("button").onmouseover=function(){
+            sniffer("Inner sniffer");
+        }
+
+        /*
+            document.body.onload=function(){
+            alert('annonymous inner function BODy');
+         }
+        */
+
+        document.getElementById("secondP").onmouseover=function(){
+            alert('Mouse over inner P')
+            console.log("Log the annonymous inner function on secondP");
+        }
+
+        document.getElementById("firstP").onclick=function(){
+            alert('Mouse over inner P')
+            console.log("Log the annonymous inner function on firstP");
+        }
+    </script>
+
+<script src="external.js"></script>
+</body>
+</html>
